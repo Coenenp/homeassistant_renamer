@@ -1,0 +1,59 @@
+{% load custom_filters %}
+{% if messages %}
+    <div class="row mt-3">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <div class="col-md-10 col-12 mx-auto alert alert-danger">
+                    {{ message }}
+                </div>
+            {% elif message.tags == 'warning' %}
+                <div class="col-md-10 col-12 mx-auto alert alert-warning">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="col-md-10 col-12 mx-auto alert alert-success">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+<br>
+{% if rename_data %}
+<div class="d-flex justify-content-end">
+
+    {% if replace_regex %}
+        <form method="post" style="margin-right: 10px;">
+            {% csrf_token %}
+            <button class="btn btn-warning" type="submit" name="rename_confirm">Proceed with Renaming</button>
+        </form>
+    {% endif %}
+    <form action="{% url 'home' %}" method="get">
+        <input type="hidden" name="clear_results" value="1">
+        <button class="btn btn-primary" type="submit">Clear Search Results</button>
+    </form>
+
+</div>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Friendly Name</th>
+                <th scope="col">Current Entity ID</th>
+                {% if replace_regex %}
+                    <th scope="col">New Entity ID</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for friendly_name, entity_id, new_entity_id in rename_data %}
+                <tr>
+                    <td>{{ friendly_name }}</td>
+                    <td>{{ entity_id }}</td>
+                    {% if replace_regex %}
+                        <td>{{ new_entity_id }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

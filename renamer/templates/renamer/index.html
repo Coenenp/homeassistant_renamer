@@ -1,0 +1,16 @@
+{% extends 'renamer/base.html' %}
+
+{% block content %}
+<div>
+	<div class="row">
+		<div class="col-11 col-md-9 mx-auto mt-5 px-3">
+			<h1 class="fw-light">Bulk rename your entities in home assistant</h1>
+            <p class="fw-light">Either upload a csv file or use regex expressions to find and rename your home assistant entities</p>
+
+			<div>
+				<a href="{% url 'home' %}" class="btn btn-primary">Get Started Now!</a>				
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

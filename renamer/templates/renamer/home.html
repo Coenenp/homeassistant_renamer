@@ -1,0 +1,27 @@
+{% extends "renamer/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-11 col-md-9 mx-auto mt-5">
+            <h1>Upload a CSV file with entities to rename</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ upload_form|crispy }}
+                <input type="hidden" name="csv_submit" value="1">
+                <button class="btn btn-primary" type="submit">Submit CSV</button>
+            </form>
+            <br>
+            <h1>Use regex expressions to search (and rename) entities</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ regex_form|crispy }}
+                <input type="hidden" name="regex_submit" value="1">
+                <button class="btn btn-primary" type="submit">Submit Regex</button>
+            </form>
+            <br>
+            {% include "renamer/report.html" %}
+            {% include "renamer/table.html" %}
+        </div>
+    </div>
+{% endblock content %}

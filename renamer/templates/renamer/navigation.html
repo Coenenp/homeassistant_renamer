@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg bg-light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{% url 'home' %}">Home Assistant Entity Renamer</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+			<ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-link" href="{% url 'config_form' %}">{{ user.username }}</a>
+                    </li>
+            
+                    <li class="nav-item" style="margin-left: 10px;">
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link btn btn-link">Sign out</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-link" href="{% url 'login' %}">Sign in</a>
+                    </li>
+            
+                    <li class="nav-item" style="margin-left: 10px;">
+                        <a class="nav-link btn btn-link" href="{% url 'signup' %}">Sign up</a>
+                    </li>
+                {% endif %}
+            </ul>
+            
+		</div>
+	</div>
+</nav>

@@ -1,5 +1,8 @@
 # Home Assistant Entity Renamer
 
+Test deployment available here:
+https://homeassistant-renamer.vercel.app/
+
 ## Overview
 
 The Home Assistant Entity Renamer is a Django-based web application designed to manage and rename entities in Home Assistant. This tool provides a user-friendly interface to list, filter, and rename entities using CSV files or regular expressions, enhancing the organization and management of Home Assistant configurations.

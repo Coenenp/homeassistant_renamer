@@ -28,3 +28,4 @@ class AppConfigForm(forms.ModelForm):
     class Meta:
         model = AppConfig
         fields = ['host', 'tls_enabled', 'access_token']
+        

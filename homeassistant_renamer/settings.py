@@ -27,8 +27,11 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    '.vercel.app'
+    '127.0.0.1',
+    'localhost',
+]
 
 # Application definition
 
@@ -78,23 +81,23 @@ WSGI_APPLICATION = 'homeassistant_renamer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'homeassistant_renamer',
-        'USER': 'root',
-        'PASSWORD': config('DB_PASS'),
-        'HOST': config('DB_HOST'),
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'homeassistant_renamer',
+#        'USER': 'root',
+#        'PASSWORD': config('DB_PASS'),
+#        'HOST': config('DB_HOST'),
+#        'PORT':'3306',
+#    }
+#}
 
 
 # Password validation

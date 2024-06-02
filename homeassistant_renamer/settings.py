@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'homeassistant_renamer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'POSTGRES_DATABASE', 
-        'USER': 'POSTGRES_USER',
-        'PASSWORD': 'POSTGRES_PASSWORD',
-        'HOST': 'POSTGRES_HOST', 
+        'NAME':  config('POSTGRES_DATABASE'), 
+        'USER':  config('POSTGRES_USER'),
+        'PASSWORD':  config('POSTGRES_PASSWORD'),
+        'HOST':  config('POSTGRES_HOST'), 
         'PORT': '5432',
     }
 }

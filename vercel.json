@@ -9,9 +9,7 @@
             "src": "/(.*)",
             "dest": "homeassistant_renamer/wsgi.py"
         }
-    ]
-}
-{
+    ],
     "functions": {
         "app/api/**/*": {
             "maxDuration": 60

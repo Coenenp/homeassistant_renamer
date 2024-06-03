@@ -1,7 +1,7 @@
 {
     "functions": {
         "api/wsgi.py": {
-            "runtime": "python@3.10.2",
+            "runtime": "python@3.10",
             "maxDuration": 60,
             "memory": 1024
         }

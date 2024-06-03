@@ -1,15 +1,13 @@
 {
-    "functions": {
-        "api/wsgi.py": {
-            "runtime": "python@3.12.3",
-            "maxDuration": 60,
-            "memory": 1024
-        }
-    },
+    "builds": [{
+        "src": "homeassistant_renamer/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "maxDuration": 60, "memory": 1024 }
+    }],
     "routes": [
-        {
+        { 
             "src": "/(.*)",
-            "dest": "api/wsgi.py"
+            "dest": "homeassistant_renamer/wsgi.py"
         }
     ]
 }

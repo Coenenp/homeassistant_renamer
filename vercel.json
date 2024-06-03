@@ -1,6 +1,6 @@
 {
     "functions": {
-        "homeassistant_renamer/wsgi.py": {  
+        "homeassistant_renamer/homeassistant_renamer/wsgi.py": {
             "runtime": "python@3.10.2",
             "maxDuration": 60,
             "memory": 1024
@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "homeassistant_renamer/wsgi.py"
+            "dest": "homeassistant_renamer/homeassistant_renamer/wsgi.py"
         }
     ]
 }

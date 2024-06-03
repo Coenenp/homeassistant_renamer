@@ -4,7 +4,8 @@
             "runtime": "@vercel/python",
             "maxDuration": 60,
             "memory": 1024,
-            "maxLambdaSize": "15mb"
+            "includeFiles": "homeassistant_renamer/**/*",
+            "excludeFiles": "homeassistant_renamer/tests/*"
         }
     },
     "routes": [

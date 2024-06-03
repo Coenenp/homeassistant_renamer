@@ -3,8 +3,8 @@
         "homeassistant_renamer/wsgi.py": {
             "runtime": "@vercel/python",
             "maxDuration": 60,
-            "memory": 1024,  // Optional, specify the memory in MB
-            "maxLambdaSize": "15mb"  // Optional, specify the max lambda size
+            "memory": 1024,
+            "maxLambdaSize": "15mb"
         }
     },
     "routes": [

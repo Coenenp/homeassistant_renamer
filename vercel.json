@@ -2,7 +2,7 @@
     "functions": {
         "homeassistant_renamer/wsgi.py": {  
             "maxDuration": 60,
-            "runtime": "python3.10",
+            "runtime": "python",
             "memory": 1024
         }
     },

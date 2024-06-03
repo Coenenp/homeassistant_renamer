@@ -1,7 +1,7 @@
 {
     "functions": {
         "api/wsgi.py": {
-            "runtime": "@vercel/python",
+            "runtime": "python@3.12.3",
             "maxDuration": 60,
             "memory": 1024
         }
